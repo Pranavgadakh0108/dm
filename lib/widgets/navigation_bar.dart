@@ -6,7 +6,7 @@ import 'package:dmboss/ui/menu/bid_history_screen.dart';
 import 'package:dmboss/ui/menu/transaction_history_screen.dart';
 import 'package:dmboss/ui/my_wallet_screen.dart';
 import 'package:dmboss/widgets/exit_dialog.dart';
-import 'package:dmboss/widgets/make_whatsapp_chat.dart';
+import 'package:dmboss/util/make_whatsapp_chat.dart';
 import 'package:flutter/material.dart';
 
 class AppNavigationBar extends StatefulWidget {

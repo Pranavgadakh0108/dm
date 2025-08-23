@@ -1,4 +1,4 @@
-import 'package:dmboss/widgets/share_refferal.dart';
+import 'package:dmboss/util/share_refferal.dart';
 import 'package:flutter/material.dart';
 
 class ReferAndEarnPage extends StatelessWidget {

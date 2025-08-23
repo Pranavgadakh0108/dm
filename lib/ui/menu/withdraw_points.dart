@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use, use_build_context_synchronously
 
 import 'package:dmboss/widgets/custom_profile_text_field.dart';
-import 'package:dmboss/widgets/make_whatsapp_chat.dart';
+import 'package:dmboss/util/make_whatsapp_chat.dart';
 import 'package:dmboss/widgets/orange_button.dart';
 import 'package:dmboss/widgets/term_condition_popup.dart';
 import 'package:flutter/material.dart';

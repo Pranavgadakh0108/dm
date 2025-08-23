@@ -159,8 +159,8 @@
 
 import 'package:dmboss/widgets/always_phone_prefix.dart';
 import 'package:dmboss/widgets/custom_text_field.dart';
-import 'package:dmboss/widgets/make_call.dart';
-import 'package:dmboss/widgets/make_whatsapp_chat.dart';
+import 'package:dmboss/util/make_call.dart';
+import 'package:dmboss/util/make_whatsapp_chat.dart';
 import 'package:dmboss/widgets/orange_button.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
