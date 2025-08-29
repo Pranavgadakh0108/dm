@@ -15,6 +15,8 @@ class WithdrawPoints extends StatefulWidget {
 }
 
 class _WithdrawPointsState extends State<WithdrawPoints> {
+  final GlobalKey<FormState> _globalKey = GlobalKey();
+  TextEditingController withdrawCoinsController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -46,26 +48,26 @@ class _WithdrawPointsState extends State<WithdrawPoints> {
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Column(
             children: [
-              // SizedBox(height: 60),
-              // Text(
-              //   'Add Back A/C Details',
-              //   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
-              // ),
-              // SizedBox(height: 20),
-              // CustomProfileTextFormField(
-              //   controller: TextEditingController(),
-              //   hintText: "A/C Holder Name",
-              // ),
-              // SizedBox(height: 20),
-              // CustomProfileTextFormField(
-              //   controller: TextEditingController(),
-              //   hintText: "A/C Number",
-              // ),
-              // SizedBox(height: 20),
-              // CustomProfileTextFormField(
-              //   controller: TextEditingController(),
-              //   hintText: "IFSC",
-              // ),
+              SizedBox(height: 60),
+              Text(
+                'Back A/C Details',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              ),
+              SizedBox(height: 20),
+              CustomProfileTextFormField(
+                controller: TextEditingController(),
+                hintText: "A/C Holder Name",
+              ),
+              SizedBox(height: 20),
+              CustomProfileTextFormField(
+                controller: TextEditingController(),
+                hintText: "A/C Number",
+              ),
+              SizedBox(height: 20),
+              CustomProfileTextFormField(
+                controller: TextEditingController(),
+                hintText: "IFSC",
+              ),
               // SizedBox(height: 20),
               // OrangeButton(text: "Submit", onPressed: () {}),
               SizedBox(height: 40),
@@ -96,13 +98,35 @@ class _WithdrawPointsState extends State<WithdrawPoints> {
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
               ),
               SizedBox(height: 20),
-              CustomProfileTextFormField(
-                controller: TextEditingController(),
-                hintText: "Enter Points",
-                icon: FontAwesomeIcons.circleDollarToSlot,
+              Form(
+                key: _globalKey,
+                child: Column(
+                  children: [
+                    CustomProfileTextFormField(
+                      controller: withdrawCoinsController,
+                      hintText: "Enter Points",
+                      icon: FontAwesomeIcons.circleDollarToSlot,
+                      onChanged: (value) {
+                        setState(() {
+                          withdrawCoinsController.text = value;
+                        });
+                      },
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "⚠️ Enter valid Coins";
+                        }
+                        return null;
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    OrangeButton(text: "Withdraw", onPressed: () {
+                      if(_globalKey.currentState!.validate()){
+
+                      }
+                    }),
+                  ],
+                ),
               ),
-              SizedBox(height: 20),
-              OrangeButton(text: "Withdraw", onPressed: () {}),
             ],
           ),
         ),

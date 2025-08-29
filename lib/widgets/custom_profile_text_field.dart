@@ -6,6 +6,8 @@ class CustomProfileTextFormField extends StatelessWidget {
   final IconData? icon;
   final bool obscureText;
   final bool readOnly;
+  final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
 
   const CustomProfileTextFormField({
     super.key,
@@ -13,7 +15,9 @@ class CustomProfileTextFormField extends StatelessWidget {
     required this.hintText,
     this.icon,
     this.obscureText = false,
-    this.readOnly = false
+    this.readOnly = false,
+    this.onChanged,
+    this.validator,
   });
 
   @override
@@ -38,6 +42,8 @@ class CustomProfileTextFormField extends StatelessWidget {
           borderSide: BorderSide.none,
         ),
       ),
+      onChanged: onChanged,
+      validator: validator,
     );
   }
 }

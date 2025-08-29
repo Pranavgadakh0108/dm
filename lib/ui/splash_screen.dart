@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:dmboss/ui/login_screen.dart';
+import 'package:dmboss/ui/login_screen1.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LoginScreen()),
+        MaterialPageRoute(builder: (context) => LoginScreen1()),
       );
     });
   }

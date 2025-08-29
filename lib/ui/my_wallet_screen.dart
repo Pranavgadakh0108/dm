@@ -5,14 +5,15 @@ import 'package:dmboss/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class MyWalletScreen extends StatefulWidget {
-  const MyWalletScreen({super.key});
+  final String walletBalance;
+  const MyWalletScreen({super.key, required this.walletBalance});
 
   @override
   State<MyWalletScreen> createState() => _MyWalletScreenState();
 }
 
 class _MyWalletScreenState extends State<MyWalletScreen> {
-  final double walletBalance = 24897;
+  //final double walletBalance = 24897;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class _MyWalletScreenState extends State<MyWalletScreen> {
                 const Icon(Icons.wallet, color: Colors.black),
                 const SizedBox(width: 5),
                 Text(
-                  walletBalance.toString(),
+                  widget.walletBalance,
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],

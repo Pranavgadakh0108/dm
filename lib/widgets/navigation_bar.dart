@@ -24,7 +24,7 @@ class _AppNavigationBarState extends State<AppNavigationBar> {
     const BidHistoryScreen(),
     const TransactionHistoryScreen(),
     const HomeScreen(),
-    const MyWalletScreen(),
+    const MyWalletScreen(walletBalance: '',),
   ];
 
   void onTapSelectItem(int index) {

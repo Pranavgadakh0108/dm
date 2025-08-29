@@ -222,7 +222,7 @@
 //             // Date Container
 //             Container(
 //               // padding: const EdgeInsets.all(12),
-//               padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02), 
+//               padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.02),
 //               decoration: BoxDecoration(
 //                 border: Border.all(color: Colors.orange, width: 2),
 //                 borderRadius: BorderRadius.circular(10),
@@ -386,26 +386,28 @@
 import 'package:dmboss/widgets/current_date.dart';
 import 'package:flutter/material.dart';
 
-class GameDetailScreen3 extends StatefulWidget {
+class BulkDp extends StatefulWidget {
   final String title;
-  const GameDetailScreen3({super.key, required this.title});
+  const BulkDp({super.key, required this.title});
 
   @override
-  State<GameDetailScreen3> createState() => _GameDetailScreen3State();
+  State<BulkDp> createState() => _BulkDpState();
 }
 
-class _GameDetailScreen3State extends State<GameDetailScreen3> {
+class _BulkDpState extends State<BulkDp> {
   final List<int> pointsList = [5, 10, 20, 50, 100, 200, 500, 1000];
   int? selectedPoint;
 
-  final List<int> digits1 = [
-    128, 137, 146, 236, 245, 290, 
-    380, 470, 489, 560, 579, 678,
-  ];
-  final List<int> digits2 = [
-    129, 138, 147, 156, 237, 246, 
-    345, 390, 480, 570, 589, 679,
-  ];
+  final List<int> digits1 = [100, 119, 155, 227, 335, 344, 399, 588, 669];
+  final List<int> digits2 = [110, 200, 228, 255, 336, 499, 660, 688, 778];
+  final List<int> digits3 = [166, 229, 300, 337, 355, 445, 599, 779, 788];
+  final List<int> digits4 = [112, 220, 266, 338, 400, 446, 455, 699, 770];
+  final List<int> digits5 = [113, 122, 177, 339, 366, 447, 500, 799, 889];
+  final List<int> digits6 = [600, 114, 277, 330, 448, 466, 556, 880, 899];
+  final List<int> digits7 = [115, 133, 188, 223, 377, 449, 557, 566, 700];
+  final List<int> digits8 = [116, 224, 233, 288, 440, 477, 558, 800, 990];
+  final List<int> digits9 = [117, 144, 199, 225, 388, 559, 577, 667, 900];
+  final List<int> digits0 = [118, 226, 244, 299, 334, 488, 550, 668, 677];
 
   Map<int, int> selectedDigits = {};
 
@@ -445,7 +447,9 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
               border: Border.all(color: Colors.deepOrangeAccent, width: 3),
             ),
             child: Padding(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.005),
+              padding: EdgeInsets.all(
+                MediaQuery.of(context).size.width * 0.005,
+              ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -461,7 +465,9 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                         height: 27,
                         width: 55,
                         decoration: BoxDecoration(
-                          color: isSelected ? Colors.red : Colors.green.shade800,
+                          color: isSelected
+                              ? Colors.red
+                              : Colors.green.shade800,
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -589,7 +595,8 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                         // Date Container
                         Container(
                           padding: EdgeInsets.all(
-                              MediaQuery.of(context).size.width * 0.02),
+                            MediaQuery.of(context).size.width * 0.02,
+                          ),
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.orange, width: 2),
                             borderRadius: BorderRadius.circular(10),
@@ -661,7 +668,7 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            buildDigitsGrid(digits1),
+                            buildDigitsGrid(digits3),
                             const SizedBox(height: 15),
                             const Divider(color: Colors.orange),
                             const Text(
@@ -672,7 +679,7 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            buildDigitsGrid(digits2),
+                            buildDigitsGrid(digits4),
                             const Divider(color: Colors.orange),
                             const Text(
                               "Select All Digits 5",
@@ -682,7 +689,7 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            buildDigitsGrid(digits1),
+                            buildDigitsGrid(digits5),
                             const SizedBox(height: 15),
                             const Divider(color: Colors.orange),
                             const Text(
@@ -693,7 +700,52 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                               ),
                             ),
                             const SizedBox(height: 8),
-                            buildDigitsGrid(digits2),
+                            buildDigitsGrid(digits6),
+                            const SizedBox(height: 15),
+                            const Divider(color: Colors.orange),
+                            const Text(
+                              "Select All Digits 7",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            buildDigitsGrid(digits7),
+                            const SizedBox(height: 15),
+                            const Divider(color: Colors.orange),
+                            const Text(
+                              "Select All Digits 8",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            buildDigitsGrid(digits8),
+                            const SizedBox(height: 15),
+                            const Divider(color: Colors.orange),
+                            const Text(
+                              "Select All Digits 9",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            buildDigitsGrid(digits9),
+                            const SizedBox(height: 15),
+                            const Divider(color: Colors.orange),
+                            const Text(
+                              "Select All Digits 0",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.orange,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            buildDigitsGrid(digits0),
+                            const SizedBox(height: 15),
                           ],
                         ),
                       ],
@@ -713,7 +765,8 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
                             padding: EdgeInsets.symmetric(
-                              horizontal: MediaQuery.of(context).size.width * 0.06,
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.06,
                               vertical: 12,
                             ),
                             shape: RoundedRectangleBorder(
@@ -733,7 +786,8 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,
                             padding: EdgeInsets.symmetric(
-                              horizontal: MediaQuery.of(context).size.width * 0.06,
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.06,
                               vertical: 12,
                             ),
                             shape: RoundedRectangleBorder(
@@ -746,7 +800,6 @@ class _GameDetailScreen3State extends State<GameDetailScreen3> {
                           ),
                         ),
                       ),
-                      
                     ],
                   ),
                 ),

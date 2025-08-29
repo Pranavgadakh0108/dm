@@ -1,10 +1,14 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:dmboss/service/login_user.dart';
+import 'package:dmboss/ui/login_screen1.dart';
 import 'package:dmboss/ui/menu/add_fund_history.dart';
 import 'package:dmboss/ui/menu/add_fund_screen.dart';
 //import 'package:dmboss/ui/menu/bid_history_screen.dart';
 import 'package:dmboss/ui/menu/charts_screen.dart';
 import 'package:dmboss/ui/menu/game_rate_screen.dart';
 import 'package:dmboss/ui/menu/how_to_play_screen.dart';
-import 'package:dmboss/ui/login_screen.dart';
+// import 'package:dmboss/ui/login_screen.dart';
 import 'package:dmboss/ui/menu/my_profile_screen.dart';
 import 'package:dmboss/ui/menu/refer_and_earn_screen.dart';
 import 'package:dmboss/ui/menu/time_table_screen.dart';
@@ -32,7 +36,7 @@ class AppDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           SizedBox(
-            height: 150,
+            height: 200,
             child: DrawerHeader(
               decoration: BoxDecoration(color: Colors.blueGrey.shade100),
               child: Row(
@@ -93,7 +97,11 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
+                MaterialPageRoute(
+                  builder: (context) =>
+                      ProfilePage(username: username, phoneNumber: phoneNumber),
+                      //ProfilePage()
+                ),
               );
             },
           ),
@@ -213,10 +221,13 @@ class AppDrawer extends StatelessWidget {
           DrawerItem(
             icon: Icons.logout,
             title: 'Logout',
-            onTap: () {
+            onTap: () async {
+              final authService = AuthService();
+              await authService
+                  .clearAuthData(); // clear SharedPreferences tokens
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                MaterialPageRoute(builder: (context) => LoginScreen1()),
               );
             },
           ),
